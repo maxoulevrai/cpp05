@@ -6,27 +6,30 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/25 15:26:42 by maleca            #+#    #+#             */
-/*   Updated: 2026/09/27 19:36:14 by codespace        ###   ########.fr       */
+/*   Updated: 2026/09/27 19:33:48 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(): _name("Othmane"), _grade(150) { }
-
-Bureaucrat::Bureaucrat(std::string name, int grade): _name(name), _grade(grade) {
-	if (grade < 1)
-		throw GradeTooLowException();
-	else if (grade > 150)
-		throw GradeTooHighException();
-	else
-		
+Bureaucrat::Bureaucrat(): _name("Othmane"), _grade(150) {
+	std::cout << "BureaucratDefault constructor called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& other):
-		_name(other._name), _grade(other._grade) { }
+Bureaucrat::Bureaucrat(std::string name, int grade): _name(name), _grade(grade) {
+	std::cout << "BureaucratParam constructor called" << std::endl;
+	if (grade < 1)
+		throw GradeTooLowException();
+	if (grade > 150)
+		throw GradeTooHighException();
+}
+
+Bureaucrat::Bureaucrat(const Bureaucrat& other): _name(other._name), _grade(other._grade) {
+	std::cout << "BureaucratCopy constructor called" << std::endl; 
+}
 
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat& other) {
+	std::cout << "BureaucratCopy assignment constructor called" << std::endl; 
 	if (this != &other) {
 		this->_name = other.getName();
 		this->_grade = other.getGrade();
@@ -52,14 +55,6 @@ std::string	Bureaucrat::getName(void) const {
 
 int			Bureaucrat::getGrade(void) const {
 	return (this->_grade);
-}
-
-void		Bureaucrat::setName(const std::string name) {
-	this->_name = name;
-}
-
-void		Bureaucrat::setGrade(const int grade) {
-	this->_grade = grade;
 }
 
 void		Bureaucrat::increment(void) {

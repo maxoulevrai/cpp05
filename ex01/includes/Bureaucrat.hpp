@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 16:27:52 by maleca            #+#    #+#             */
-/*   Updated: 2026/09/28 05:01:30 by codespace        ###   ########.fr       */
+/*   Updated: 2026/09/27 19:20:04 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ class Bureaucrat {
 
 		std::string	getName(void) const;
 		int			getGrade(void) const;
-		void		setName(const std::string name);
-		void		setGrade(const int grade);
 		void		increment(void);
 		void		decrement(void);
 
