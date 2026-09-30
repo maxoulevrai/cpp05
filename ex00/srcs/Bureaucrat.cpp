@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: maleca <maleca@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/25 15:26:42 by maleca            #+#    #+#             */
-/*   Updated: 2026/09/27 19:36:14 by codespace        ###   ########.fr       */
+/*   Updated: 2026/09/30 16:31:22 by maleca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 Bureaucrat::Bureaucrat(): _name("Othmane"), _grade(150) { }
 
-Bureaucrat::Bureaucrat(std::string name, int grade): _name(name), _grade(grade) {
+Bureaucrat::Bureaucrat(std::string name, int grade): _name(name) {
 	if (grade < 1)
 		throw GradeTooLowException();
 	else if (grade > 150)
 		throw GradeTooHighException();
 	else
-		
+		this->_grade = grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other):
@@ -76,3 +76,4 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat) {
 		<< bureaucrat.getGrade();
 	return (os);
 }
+
