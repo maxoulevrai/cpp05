@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maleca <maleca@student.42.fr>              +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 16:26:36 by maleca            #+#    #+#             */
-/*   Updated: 2026/09/25 19:10:15 by maleca           ###   ########.fr       */
+/*   Updated: 2026/10/01 10:16:39 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,19 @@ static void testInvalidGrades(void)
 
 int main(void)
 {
-	Bureaucrat alice("Alice", 42);
-	std::cout << alice << std::endl;
+	Bureaucrat Othmane("Othmane", 42);
+	std::cout << Othmane << std::endl;
 
-	alice.increment();
-	std::cout << "After increment: " << alice << std::endl;
-	alice.decrement();
-	std::cout << "After decrement: " << alice << std::endl;
+	Othmane.increment();
+	std::cout << "After increment: " << Othmane << std::endl;
+	Othmane.decrement();
+	std::cout << "After decrement: " << Othmane << std::endl;
 
-	Bureaucrat copy(alice);
+	Bureaucrat copy(Othmane);
 	std::cout << "Copy: " << copy << std::endl;
 
 	Bureaucrat assigned("Assigned", 100);
-	assigned = alice;
+	assigned = Othmane;
 	std::cout << "Assigned: " << assigned << std::endl;
 
 	testInvalidGrades();

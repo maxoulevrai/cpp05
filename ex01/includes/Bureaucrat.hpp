@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 16:27:52 by maleca            #+#    #+#             */
-/*   Updated: 2026/09/27 19:20:04 by codespace        ###   ########.fr       */
+/*   Updated: 2026/10/01 10:12:28 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Bureaucrat {
 		int			getGrade(void) const;
 		void		increment(void);
 		void		decrement(void);
-
+		void		signForm(class Form &form);
 		class GradeTooHighException : public std::exception {
 			public:
 				const char *what() const throw();
